@@ -103,25 +103,7 @@
 }
 .pcb-popup-overlay.active{ display:flex; }
 
-.pcb-chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #4338ca, #7c3aed, #db2777);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 0 20px #4338ca, 0 0 40px #7c3aed, 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 999;
 
-  /* 👇 CLAVE */
-  opacity: 1;
-  transform: scale(1);
-}
 
 
     .pcb-popup {
@@ -728,12 +710,24 @@
         <a href="#contact" class="hover:underline">Contacto</a>
         <a href="https://pcbsystempr-cyber.github.io/pcbsystem/index.html#inicio" target="_blank" rel="noopener noreferrer" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-md font-semibold transition-all duration-300">Visita PCB System</a>
       </nav>
-      <!-- Mobile Menu Button -->
-      <button type="button" id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú de navegación">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+
+      <!-- Mobile: PCB System Button + Menu Button -->
+      <div class="md:hidden flex items-center gap-2">
+        <!-- Botón PCB System (móvil) -->
+        <a href="https://pcbsystempr-cyber.github.io/pcbsystem/index.html#inicio" target="_blank" rel="noopener noreferrer" class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-md text-xs font-semibold transition-all duration-300 flex items-center gap-1" aria-label="Visitar PCB System">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" class="w-4 h-4">
+            <path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 248c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40zm-24 56c0 22.1-17.9 40-40 40s-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/>
+          </svg>
+          <span>PCB</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobile-menu-button" class="text-white focus:outline-none" aria-label="Abrir menú de navegación">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
       <!-- Mobile Menu -->
       <nav id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 shadow-lg hidden">
         <div class="px-6 py-4 space-y-2">
@@ -742,7 +736,6 @@
           <a href="#rules" class="block hover:underline">Reglas</a>
           <a href="#gallery" class="block hover:underline">Galería</a>
           <a href="#contact" class="block hover:underline">Contacto</a>
-          <a href="https://pcbsystempr-cyber.github.io/pcbsystem/index.html#inicio" target="_blank" rel="noopener noreferrer" class="block bg-white/20 px-4 py-2 rounded-md font-semibold">Visita PCB System</a>
         </div>
       </nav>
     </div>
@@ -1132,8 +1125,6 @@
       </div>
     </div>
   </div>
-
-
 
 <script>
   // Mobile Menu Toggle (con protección y animaciones smooth)
